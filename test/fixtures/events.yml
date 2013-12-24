@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  follow: false
+  date: 2013-12-24
+  description: MyString
+  user1: MyString
+  user2: MyString
+  item: MyString
+
+two:
+  follow: false
+  date: 2013-12-24
+  description: MyString
+  user1: MyString
+  user2: MyString
+  item: MyString

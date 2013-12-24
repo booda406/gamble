@@ -1,0 +1,44 @@
+<%= form_for @event, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :follow, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :follow, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :date, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :description, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :user1, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :user1, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :user2, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :user2, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :item, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :item, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                events_path, :class => 'btn' %>
+  </div>
+<% end %>
