@@ -1,16 +1,18 @@
+<!DOCTYPE html>
 
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Just 賭 It</title>
+  <link href="../../assets/stylesheets/style.css" rel="stylesheet" media="screen" />
+</head>
+<body>
 <!-- Wrap all the page -->
 <div class="wrapper">
 	<!-- 960px -->
 	<div class="container_1">
 	<!-- navagation bar starts-->
 			<ul>
-			<li class="li1">
-				<% if user_signed_in? %>
-<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>				<% else %>
-				<%= link_to "sign_in", user_session_path %>
-				<% end %>
-			</li>
 			<li class="li1">Fans</li>
 			<li class="li1">Following Player</li>
 			<li class="li1">Following Event</li>
@@ -48,3 +50,9 @@
 </div>
 
 <!-- Wrap all the page -->
+
+
+
+
+</body>
+</html>
