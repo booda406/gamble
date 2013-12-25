@@ -5762,9 +5762,9 @@ a:active {
 
 /* line 110, ../sass/screen.scss */
 .logo {
-  width: 260px;
+  width: px;
   height: 60px;
-  background-image: url("http://i.imgur.com/c57GAaa.png?1");
+  background-image: url("/assets/image");
   margin-bottom: 5px;
   float: left;
 }
