@@ -5762,10 +5762,11 @@ a:active {
 
 /* line 110, ../sass/screen.scss */
 .logo {
-  width: 260px;
-  height: 95px;
-  background-image: url("/assets/image");
+  width: 151px;
+  height: 63px;
+  background-image: url(/assets/logo.jpg);
   margin-bottom: 5px;
+  margin-left: 40px;
   float: left;
 }
 
