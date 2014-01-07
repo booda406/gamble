@@ -38,10 +38,86 @@
   </head>
   <body>
 
+<!-- Wrap all the page -->
+<div class="wrapper">
+    <!-- 960px -->
+    <div class="container_1">
+    <!-- navagation bar starts-->
+            <ul>
+            <li class="li1">
+                <% if user_signed_in? %>
+<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>                <% else %>
+                <%= link_to "Sign in", user_session_path %>
+                <% end %>
+            </li>
+            <a href="<%=root_path%>" ><li class="logo"></li></a>
+            <li class="li1">
+                <% if user_signed_in? %>
+                <a href="fan.html">Fans</a>
+                <% else %>
+                <a href="users/sign_in">Fans</a>
+                <% end %>
+            </li>
+            <li class="li1">
+                <% if user_signed_in? %>
+                <a href="following_player">Following Player</a>
+                <% else %>
+                <a href="users/sign_in">Following Player</a>
+                <% end %>
+            </li>
+
+            <li class="li1">
+                <% if user_signed_in? %>
+                <a href="Following_Event">Following Event</a>
+                <% else %>
+                <a href="users/sign_in">Following Event</a>
+                <% end %>
+            </li>
+            <li class="li1">
+                <% if user_signed_in? %>
+                <a href="events/new">Create Event</a>
+                <% else %>
+                <a href="users/sign_in">Create Event</a>
+                <% end %>
+            </li>
+            <li class="li2">
+                <% if user_signed_in? %>
+                <a href="Profile">Profile</a>
+                <% else %>
+                <a href="users/sign_in">Profile</a>
+                <% end %>
+            </li>
+            </ul>
+    <!-- navagation bar ends-->
+
+    <!-- 橫幅圖片 -->
+    <!-- 活動左方分類欄 -->
+    <div class="left_box hight2">
+        <h1>Top 10 Event</h1>
+    </div>
+    <div class="right_box hight2">
+        <h1>Top 10 Player</h1>
+    </div>
+    <div class="container_3">
 
             <%= bootstrap_flash %>
             <%= yield %>
        
+    </div>
+    
+    </div>
+    <!-- container_1 ends here -->
+
+<div class="footer">
+            <p>Copyright © 2013 Just 賭 It 集團 All Rights Reserved
+            </p>
+</div>
+
+</div>
+
+<!-- Wrap all the page -->
+
+
 
   </body>
 </html>

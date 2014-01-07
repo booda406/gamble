@@ -1,10 +1,10 @@
 
 <!-- Wrap all the page -->
-<div class="wrapper">
+<!-- <div class="wrapper"> -->
 	<!-- 960px -->
-	<div class="container_1">
+	<!-- <div class="container_1"> -->
 	<!-- navagation bar starts-->
-			<ul>
+<!-- 			<ul>
 			<li class="li1">
 				<% if user_signed_in? %>
 <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>				<% else %>
@@ -48,12 +48,12 @@
 				<a href="users/sign_in">Profile</a>
 				<% end %>
 			</li>
-			</ul>
+			</ul> -->
 	<!-- navagation bar ends-->
 
 	<!-- 橫幅圖片 -->
 	<!-- 活動左方分類欄 -->
-	<div class="left_box hight2">
+<!-- 	<div class="left_box hight2">
 		<h1>Top 10 Event</h1>
 	</div>
 	<div class="right_box hight2">
@@ -61,51 +61,47 @@
 	</div>
 	<div class="container_3">
 		<div class="title-border-bottom">
-			<h1>The Lastest Event</h1>
+			<h1>The Lastest Event</h1> -->
 				<!-- 活動簡介內框  -->
-				<div class="adjust-left"></div>
+	<!-- 			<div class="adjust-left"></div>
 
 			
-		</div>	
+		</div>	 -->
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Id</th>
       <th>Follow</th>
       <th>Date</th>
       <th>Description</th>
       <th>Player1</th>
       <th>Player2</th>
-      <th>Created At</th>
     </tr>
   </thead>
   <tbody>
     <% @events.each do |event| %>
-      <tr>
-        <td><%= link_to event.id, event_path(event) %></td>
+      <a href="<%=event_path(event)%>" ><tr>
         <td><%= event.follow %></td>
         <td><%= event.date %></td>
         <td><%= event.description %></td>
         <td><%= event.user1 %></td>
         <td><%= event.user2 %></td>
-        <td><%= event.created_at %></td>
-      </tr>
+      </tr></a>
     <% end %>
   </tbody>
 </table>	
 
 
-	</div>
+	<!-- </div> -->
 	
-	</div>
-	<!-- container_1 ends here -->
+<!-- 	</div>
+ -->	<!-- container_1 ends here -->
 
-<div class="footer">
+<!-- <div class="footer">
 			<p>Copyright © 2013 Just 賭 It 集團 All Rights Reserved
 			</p>
-</div>
+</div> -->
 
-</div>
+<!-- </div> -->
 
 <!-- Wrap all the page -->
