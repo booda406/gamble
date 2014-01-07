@@ -8,15 +8,46 @@
 			<li class="li1">
 				<% if user_signed_in? %>
 <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>				<% else %>
-				<%= link_to "sign_in", user_session_path %>
+				<%= link_to "Sign in", user_session_path %>
 				<% end %>
 			</li>
 			<li class="logo"></li>
-			<li class="li1">Fans</li>
-			<li class="li1">Following Player</li>
-			<li class="li1">Following Event</li>
-			<li class="li1"><a href="http://aqueous-springs-9464.herokuapp.com/events/new">Create Event</a></li>
-			<li class="li2">Profile</li>
+			<li class="li1">
+				<% if user_signed_in? %>
+				<a href="fan.html">Fans</a>
+				<% else %>
+				<a href="users/sign_in">Fans</a>
+				<% end %>
+			</li>
+			<li class="li1">
+				<% if user_signed_in? %>
+				<a href="following_player">Following Player</a>
+				<% else %>
+				<a href="users/sign_in">Following Player</a>
+				<% end %>
+			</li>
+
+			<li class="li1">
+				<% if user_signed_in? %>
+				<a href="Following_Event">Following Event</a>
+				<% else %>
+				<a href="users/sign_in">Following Event</a>
+				<% end %>
+			</li>
+			<li class="li1">
+				<% if user_signed_in? %>
+				<a href="events/new">Create Event</a>
+				<% else %>
+				<a href="users/sign_in">Create Event</a>
+				<% end %>
+			</li>
+			<li class="li2">
+				<% if user_signed_in? %>
+				<a href="Profile">Profile</a>
+				<% else %>
+				<a href="users/sign_in">Profile</a>
+				<% end %>
+			</li>
 			</ul>
 	<!-- navagation bar ends-->
 
@@ -32,11 +63,39 @@
 		<div class="title-border-bottom">
 			<h1>The Lastest Event</h1>
 				<!-- 活動簡介內框  -->
-				<div class="adjust-left">
-				</div>
+				<div class="adjust-left"></div>
+
 			
 		</div>	
-	
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Follow</th>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Player1</th>
+      <th>Player2</th>
+      <th>Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= link_to event.id, event_path(event) %></td>
+        <td><%= event.follow %></td>
+        <td><%= event.date %></td>
+        <td><%= event.description %></td>
+        <td><%= event.user1 %></td>
+        <td><%= event.user2 %></td>
+        <td><%= event.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>	
+
+
 	</div>
 	
 	</div>
