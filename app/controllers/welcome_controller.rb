@@ -8,4 +8,16 @@ class WelcomeController < ApplicationController
 		
 	end
 
+	def followint_event
+
+	end
+
+	def profile
+
+	end
+
+	def fans 
+
+	end
+
 end
