@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140108142027) do
+ActiveRecord::Schema.define(version: 20140108150525) do
 
   create_table "events", force: true do |t|
     t.boolean  "follow"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20140108142027) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.string   "title"
+    t.integer  "count",       default: 0
   end
 
   create_table "follows", force: true do |t|
@@ -49,6 +50,7 @@ ActiveRecord::Schema.define(version: 20140108142027) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.integer  "post",                   default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
