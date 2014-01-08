@@ -19,6 +19,7 @@ Gamble::Application.routes.draw do
   get 'following_event' => 'welcome#following_event'
   get 'profile' => 'welcome#profile'
   get 'fans' => 'welcome#fans'
+  post 'follow(:event_id)' => 'welcome#follow'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

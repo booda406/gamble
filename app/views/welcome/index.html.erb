@@ -81,7 +81,7 @@
   <tbody>
     <% @events.each do |event| %>
       <a href="<%=event_path(event)%>" ><tr>
-        <td><%= event.follow %></td>
+        <td><%= button_to "follow", :action => "follow", :event_id => event.id %></td>
         <td><%= event.date %></td>
         <td><%= event.description %></td>
         <td><%= event.user1 %></td>
