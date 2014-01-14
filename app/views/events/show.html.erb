@@ -29,7 +29,20 @@
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
 </div>
-
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style "
+  addthis:url="http://aqueous-springs-9464.herokuapp.com/events/<%=@event.id%>"
+  addthis:title="來賭一把吧!"
+  addthis:description="看看我賭了什麼!!"
+>
+<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+<a class="addthis_button_tweet"></a>
+<a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+<a class="addthis_counter addthis_pill_style"></a>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52d563651bc09130"></script>
+<!-- AddThis Button END -->
+</div>
 
 <div>
         <%= render 'comments/form' %>
