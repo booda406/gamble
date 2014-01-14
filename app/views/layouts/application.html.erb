@@ -39,7 +39,7 @@
   <body>
 
 <!-- Wrap all the page -->
-<div class="wrapper">
+<div class="wrapper" >
     <!-- 960px -->
     <div class="container_1">
     <!-- navagation bar starts-->
@@ -55,36 +55,36 @@
                 <% if user_signed_in? %>
                 <a href="fans">Fans</a>
                 <% else %>
-                <a href="users/sign_in">Fans</a>
+                <a href="../users/sign_in">Fans</a>
                 <% end %>
             </li>
             <li class="li1">
                 <% if user_signed_in? %>
-                <a href="following_player">Following Player</a>
+                <a href="../following_player">Following Player</a>
                 <% else %>
-                <a href="users/sign_in">Following Player</a>
+                <a href="../users/sign_in">Following Player</a>
                 <% end %>
             </li>
 
             <li class="li1">
                 <% if user_signed_in? %>
-                <a href="following_event">Following Event</a>
+                <a href="../following_event">Following Event</a>
                 <% else %>
-                <a href="users/sign_in">Following Event</a>
+                <a href="../users/sign_in">Following Event</a>
                 <% end %>
             </li>
             <li class="li1">
                 <% if user_signed_in? %>
-                <a href="events/new">Create Event</a>
+                <a href="../events/new">Create Event</a>
                 <% else %>
-                <a href="users/sign_in">Create Event</a>
+                <a href="../users/sign_in">Create Event</a>
                 <% end %>
             </li>
             <li class="li2">
                 <% if user_signed_in? %>
-                <a href="profile">Profile</a>
+                <a href="../profile">Profile</a>
                 <% else %>
-                <a href="users/sign_in">Profile</a>
+                <a href="../users/sign_in">Profile</a>
                 <% end %>
             </li>
             </ul>
@@ -94,11 +94,20 @@
     <!-- 活動左方分類欄 -->
     <div class="left_box hight2">
         <h1>Top 10 Event</h1>
+        <% Event.all.order('count DESC').take(10).each do |event| %>
+            <%= event.title %>
+            <p style="float:right"><%= event.count %></p><br/>
+        <% end %>
+        
     </div>
     <div class="right_box hight2">
         <h1>Top 10 Player</h1>
+        <% User.all.order('post DESC').take(10).each do |u| %>
+            <%= u.name %>
+            <p style="float:right"><%= u.post %></p><br/>
+        <% end %>
     </div>
-    <div class="container_3">
+    <div class="container_3" >
 
             <%= bootstrap_flash %>
             <%= yield %>

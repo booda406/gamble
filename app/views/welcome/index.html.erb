@@ -73,20 +73,20 @@
     <tr>
       <th>Follow</th>
       <th>Date</th>
-      <th>Description</th>
+      <th>Title</th>
       <th>Player1</th>
       <th>Player2</th>
     </tr>
   </thead>
   <tbody>
     <% @events.each do |event| %>
-      <a href="<%=event_path(event)%>" ><tr>
-        <td><%= event.follow %></td>
-        <td><%= event.date %></td>
-        <td><%= event.description %></td>
-        <td><%= event.user1 %></td>
-        <td><%= event.user2 %></td>
-      </tr></a>
+      <tr>
+        <td><%= button_to "follow", :action => "follow", :event_id => event.id %></td>
+        <td><%= link_to event.date, event_path(event) %></td>
+        <td><%= link_to event.title, event_path(event) %></td>
+        <td><%= link_to event.user1, event_path(event) %></td>
+        <td><%= link_to event.user2, event_path(event) %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>	

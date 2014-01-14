@@ -29,3 +29,22 @@
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
 </div>
+
+
+<div>
+        <%= render 'comments/form' %>
+</div>
+        <% Comment.find(:all, :conditions => { :event_id => params[:id]}).each do |comment| %>
+<div class="row row_respond">
+<div class="respond col-xs-8 col-sm-8 col-md-6 col-lg-6">
+        <div class="name">
+        <%= comment.name %><br>
+        </div>
+        <%= comment.content %>
+        <div class="time">
+        <%= comment.created_at.strftime("%F %r") %>
+        </div>
+</div>
+</div>
+
+        <% end %>
