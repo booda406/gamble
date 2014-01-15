@@ -4,9 +4,14 @@
 <head>
 </head>
 <body>
+
+	<div class = "page-header">
+		<h1>Following Events</h1>
+	</div>
 <% Follow.find(:all, :conditions => {:user_id => current_user.id}).reverse_each do |follow| %>
         <% Event.find(:all, :conditions => {:id => follow.event_id}).each do |event| %>
             <%= link_to event.title, event_path(event) %>
         <% end %>
-        <% end %></body>
+        <% end %>
+    </body>
 </html>

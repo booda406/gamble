@@ -5,25 +5,28 @@
     <div class="controls">
       <%= f.text_field :title, :class => "text_field" %>
     </div>
-
+  </br>
   <!-- </div> -->
   <!-- <div class="control-group"> -->
     <%= f.label :date, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :date, :class => 'text_field', :id => "date", :label => false %>
+      <%= f.text_field :pos, :class => 'text_field', :id => "date", :label => false %>
     </div>
+    </br>
   <!-- </div> -->
   <!-- <div class="control-group"> -->
     <%= f.label :description, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :description, :class => 'text_field' %>
     </div>
+    </br>
   <!-- </div> -->
   <!-- <div class="control-group"> -->
     <%= f.label :user1, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :user1, :class => 'text_field' %>
+      <%= f.text_field :user1, :class => 'text_field', :value => current_user.name, :disabled => true %>
     </div>
+    </br>
   <!-- </div> -->
   <!-- <div class="control-group"> -->
     <%= f.label :user2, :class => 'control-label' %>
@@ -31,18 +34,19 @@
       <%= f.text_field :user2, :class => 'text_field' %>
     <!-- </div> -->
   </div>
+  </br>
   <!-- <div class="control-group"> -->
     <%= f.label :item, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :item, :class => 'text_field' %>
     </div>
-  </div>
-
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
+  </br>
+  <div style = "text-align:center">
+    <%= f.submit :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 root_path, :class => 'btn' %>
   </div>
+</div>
 <% end %>
 
 

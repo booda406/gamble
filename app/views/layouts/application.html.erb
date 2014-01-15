@@ -95,10 +95,16 @@
     <div class="left_box hight2">
         <h1>Top 10 Event</h1>
         <% Event.all.order('count DESC').take(10).each do |event| %>
-            <%= event.title %>
-            <p style="float:right"><%= event.count %></p><br/>
+   <table style="height: 20px; width: 300px;">
+    <tbody>
+      <tr>
+        <td><%= link_to event.title, event_path(event) %></td>
+        <td style="float:right"><p><%= event.count %></p></td>
+      </tr>
+    </tbody>
+  </table>
         <% end %>
-        
+
     </div>
     <div class="right_box hight2">
         <h1>Top 10 Player</h1>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140114152419) do
+ActiveRecord::Schema.define(version: 20140115111334) do
 
   create_table "comments", force: true do |t|
     t.string   "name"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20140114152419) do
 
   create_table "events", force: true do |t|
     t.boolean  "follow"
-    t.date     "date"
+    t.date     "pos"
     t.string   "description"
     t.string   "user1"
     t.string   "user2"

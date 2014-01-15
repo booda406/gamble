@@ -82,7 +82,7 @@
     <% @events.each do |event| %>
       <tr>
         <td><%= button_to "follow", :action => "follow", :event_id => event.id %></td>
-        <td><%= link_to event.date, event_path(event) %></td>
+        <td><%= link_to event.pos, event_path(event) %></td>
         <td><%= link_to event.title, event_path(event) %></td>
         <td><%= link_to event.user1, event_path(event) %></td>
         <td><%= link_to event.user2, event_path(event) %></td>
