@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
         
         def create
                 @comment = Comment.new(comment_params)
-
+                @comment.name = current_user.name
                         if @comment.save
                                 redirect_to :back
                                 flash[notice: 'Comment was successfully created.']

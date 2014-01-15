@@ -28,6 +28,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user_id = current_user.id
+    @event.user1 = current_user.name
     @user = User.find(current_user.id)
     @user.post = @user.post+1
     respond_to do |format|
