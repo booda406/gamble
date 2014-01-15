@@ -9,6 +9,7 @@
 		<h1>Profile</h1>
 	</div>
 	<table border="0" style="width: 480px; height: 130px;">
+      <img src="https://graph.facebook.com/<%=current_user.uid%>/picture?type=large">
     <tbody>
       <tr>
         <td>Name :</td>
@@ -21,10 +22,6 @@
       <tr>
         <td>Post Count :</td>
         <td><%= current_user.post %></td>
-      </tr>
-      <tr>
-        <td>Image :</td>
-        <td><img src="https://graph.facebook.com/<%=current_user.uid%>/picture?type=large"></td>
       </tr>
     </tbody>
   </table>
