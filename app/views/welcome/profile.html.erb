@@ -4,11 +4,9 @@
 <head>
 </head>
 <body>
-	<% User.find(current_user.id) do |u| %>
-		<%= u.name %><br/>
-		<%= u.email %><br/>
-		<%= u.post %><br/>
-	<% end %>
+		<%= current_user.name %><br/>
+		<%= current_user.email %><br/>
+		<%= current_user.post %><br/>
 
 	<h1><%= %></h1>
 </body>
